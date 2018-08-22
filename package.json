@@ -21,7 +21,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "module": "tsc --rootDir src --declaration true --outDir dist",
-    "postinstall": "tsc --rootDir src --declaration true --outDir temp && babel -d dist temp --ignore '*.ts' --ignore '*.map' ",
+    "postinstall": "tsc --rootDir src --declaration true --outDir temp && babel -d dist temp",
     "start:dev": "NODE_ENV=development webpack-dev-server --content-base app --history-api-fallback",
     "compile": "NODE_ENV=production webpack --display-error-details",
     "test": "echo \"Error: no test specified\" && exit 1"
