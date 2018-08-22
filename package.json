@@ -18,10 +18,9 @@
   },
   "homepage": "http://chingyawhao.github.io/material-ui-pickers",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "module": "tsc --rootDir src --declaration true --outDir dist",
-    "postinstall": "tsc --rootDir src --declaration true --outDir temp && babel -d dist temp",
+    "build": "tsc --rootDir src --declaration true --outDir temp && babel -d dist temp",
     "start:dev": "NODE_ENV=development webpack-dev-server --content-base app --history-api-fallback",
     "compile": "NODE_ENV=production webpack --display-error-details",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -34,9 +33,7 @@
   "license": "ISC",
   "dependencies": {
     "react-swipeable-views": "^0.12.13",
-    "react-swipeable-views-utils": "^0.12.13",
-    "postinstall-build": "^5.0.1",
-    "typescript": "2.8.3"
+    "react-swipeable-views-utils": "^0.12.13"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -54,6 +51,7 @@
     "react-dom": "^16.2.0",
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^4.3.0",
+    "typescript": "2.8.3",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
     "webpack-dev-server": "^3.1.4"
