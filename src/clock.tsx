@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import {withStyles, Theme, StyledComponentProps, StyleRules} from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'

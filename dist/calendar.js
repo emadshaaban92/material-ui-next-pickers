@@ -18,7 +18,7 @@ var _reactSwipeableViewsUtils = require("react-swipeable-views-utils");
 
 var _classnames = require("classnames");
 
-var classnames = _interopRequireWildcard(_classnames);
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _styles = require("@material-ui/core/styles");
 
@@ -409,9 +409,9 @@ var Calendar = /** @class */function (_super) {
                     return React.createElement(_Typography2.default, { key: 'weeklabel-' + index, className: classes.labelWeekDay, variant: 'body1', style: { height: buttonHeight, lineHeight: buttonHeight + "px" } }, day);
                 })), _this.generateMonthCalendar(index).map(function (week, index) {
                     return React.createElement("div", { className: classes.week, key: 'week-' + index }, week.map(function (date, index) {
-                        return date ? React.createElement(_IconButton2.default, { classes: { root: classnames((_a = {}, _a[classes.selectedDay] = active && DateUtil.sameDay(date, active), _a), classes.weekDay) }, disabled: _this.dayInvalid(date), onClick: function onClick(event) {
+                        return date ? React.createElement(_IconButton2.default, { classes: { root: (0, _classnames2.default)((_a = {}, _a[classes.selectedDay] = active && DateUtil.sameDay(date, active), _a), classes.weekDay) }, disabled: _this.dayInvalid(date), onClick: function onClick(event) {
                                 return _this.selectDate(date, event);
-                            }, key: 'day-' + index, style: { height: buttonHeight - 10 } }, React.createElement(_Typography2.default, { classes: { root: classnames((_b = {}, _b[classes.selectedDayText] = active && DateUtil.sameDay(date, active), _b[classes.invalidInput] = _this.dayInvalid(date), _b)) }, variant: 'body1', style: { height: buttonHeight - 10, lineHeight: buttonHeight - 10 + "px" } }, date.getDate())) : React.createElement("div", { className: classes.weekDay, style: { height: buttonHeight - 10 }, key: 'day-' + index });
+                            }, key: 'day-' + index, style: { height: buttonHeight - 10 } }, React.createElement(_Typography2.default, { classes: { root: (0, _classnames2.default)((_b = {}, _b[classes.selectedDayText] = active && DateUtil.sameDay(date, active), _b[classes.invalidInput] = _this.dayInvalid(date), _b)) }, variant: 'body1', style: { height: buttonHeight - 10, lineHeight: buttonHeight - 10 + "px" } }, date.getDate())) : React.createElement("div", { className: classes.weekDay, style: { height: buttonHeight - 10 }, key: 'day-' + index });
                         var _a, _b;
                     }));
                 })) : React.createElement("div", { key: index });
@@ -425,9 +425,9 @@ var Calendar = /** @class */function (_super) {
                         return _this.selectCalendarYear();
                     }, classes: { root: classes.calendarMonthTitle } }, index * 18 + ' - ' + (index * 18 + 17))), React.createElement("div", { className: classes.calendarContainer }, _this.generateYearCalendar(index).map(function (years, index) {
                     return React.createElement("div", { className: classes.years, key: 'years-' + index }, years.map(function (currentYear, index) {
-                        return React.createElement(_Button2.default, { className: classnames((_a = {}, _a[classes.selectedYear] = year === currentYear, _a)), variant: year === currentYear ? 'raised' : 'flat', disabled: _this.yearInvalid(currentYear), onClick: function onClick() {
+                        return React.createElement(_Button2.default, { className: (0, _classnames2.default)((_a = {}, _a[classes.selectedYear] = year === currentYear, _a)), variant: year === currentYear ? 'raised' : 'flat', disabled: _this.yearInvalid(currentYear), onClick: function onClick() {
                                 return _this.selectCalendarYear(currentYear);
-                            }, key: 'year-' + index }, React.createElement(_Typography2.default, { className: classnames((_b = {}, _b[classes.invalidInput] = _this.yearInvalid(currentYear), _b[classes.selectedYearText] = year === currentYear, _b)), variant: 'body1' }, currentYear));
+                            }, key: 'year-' + index }, React.createElement(_Typography2.default, { className: (0, _classnames2.default)((_b = {}, _b[classes.invalidInput] = _this.yearInvalid(currentYear), _b[classes.selectedYearText] = year === currentYear, _b)), variant: 'body1' }, currentYear));
                         var _a, _b;
                     }));
                 }))) : React.createElement("div", { key: index });
