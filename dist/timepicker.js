@@ -98,6 +98,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
     }return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
+var classnames = require('classnames');
+
 var styles = function styles(theme) {
     return {
         label: {

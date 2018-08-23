@@ -10,10 +10,6 @@ var _react = require("react");
 
 var React = _interopRequireWildcard(_react);
 
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
 var _styles = require("@material-ui/core/styles");
 
 var _Typography = require("@material-ui/core/Typography");
@@ -56,6 +52,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
         if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     }return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+var classnames = require('classnames');
 
 var defaultTime = new Date(1970, 1, 1);
 var styles = function styles(theme) {
@@ -357,9 +355,9 @@ var Clock = /** @class */function (_super) {
         });
         var selected = this.getSelectedDate();
         var selectAngle = (mode === 'hour' ? selected.hour / hours.length : selected.minute / minutes.length) * 2 * Math.PI - Math.PI / 6 * 3;
-        return React.createElement("div", { className: classes.root }, React.createElement("div", { className: (0, _classnames2.default)(classes.clockDigitalContainer, classes.digitalContainer) }, React.createElement("div", { className: (0, _classnames2.default)(classes.clockDigitContainer, classes.hourDigitContainer) }, React.createElement(_Typography2.default, { color: mode === 'hour' ? 'primary' : 'default', variant: 'display3', classes: { root: (0, _classnames2.default)(classes.digitText, classes.hourDigitText) }, onClick: function onClick() {
+        return React.createElement("div", { className: classes.root }, React.createElement("div", { className: classnames(classes.clockDigitalContainer, classes.digitalContainer) }, React.createElement("div", { className: classnames(classes.clockDigitContainer, classes.hourDigitContainer) }, React.createElement(_Typography2.default, { color: mode === 'hour' ? 'primary' : 'default', variant: 'display3', classes: { root: classnames(classes.digitText, classes.hourDigitText) }, onClick: function onClick() {
                 return _this.clickSetMode('hour');
-            } }, selected.hour === 0 ? 12 : selected.hour)), React.createElement("div", null, React.createElement(_Typography2.default, { variant: 'display3', classes: { root: classes.colonDigit } }, ":")), React.createElement("div", { className: (0, _classnames2.default)(classes.clockDigitContainer, classes.miniteDigitContainer) }, React.createElement(_Typography2.default, { color: mode === 'minute' ? 'primary' : 'default', variant: 'display3', classes: { root: classes.digitText }, onClick: function onClick() {
+            } }, selected.hour === 0 ? 12 : selected.hour)), React.createElement("div", null, React.createElement(_Typography2.default, { variant: 'display3', classes: { root: classes.colonDigit } }, ":")), React.createElement("div", { className: classnames(classes.clockDigitContainer, classes.miniteDigitContainer) }, React.createElement(_Typography2.default, { color: mode === 'minute' ? 'primary' : 'default', variant: 'display3', classes: { root: classes.digitText }, onClick: function onClick() {
                 return _this.clickSetMode('minute');
             } }, DateUtil.fillInDigit(selected.minute, 2)), React.createElement("div", { className: classes.ampmButtons }, React.createElement(_Button2.default, { color: selected.ampm === 'am' ? 'primary' : 'default', classes: { root: classes.ampmButton }, onClick: function onClick(event) {
                 return _this.clickAmPm('am', event);
@@ -382,9 +380,9 @@ var Clock = /** @class */function (_super) {
             } }, React.createElement("div", { className: classes.clockHandContainer, style: { height: clockRadius, paddingBottom: clockRadius,
                 transition: selecting ? '' : 'transform 600ms ease-in-out',
                 transform: "rotate(" + (selectAngle + Math.PI / 6 * 3) + "rad)"
-            } }, React.createElement("div", { className: (0, _classnames2.default)(classes.clockHand, classes.hand) }, React.createElement("div", { className: classes.clockHandHead }), React.createElement("div", { className: classes.clockHandTail }))), hours.map(function (hour, index) {
+            } }, React.createElement("div", { className: classnames(classes.clockHand, classes.hand) }, React.createElement("div", { className: classes.clockHandHead }), React.createElement("div", { className: classes.clockHandTail }))), hours.map(function (hour, index) {
             var angle = index / hours.length * 2 * Math.PI - Math.PI / 6 * 3;
-            return React.createElement(_Typography2.default, { key: hour, className: (0, _classnames2.default)(classes.clockText, (_a = {}, _a[classes.clockTextSelected] = mode === 'hour' && selected.hour === index, _a), (_b = {}, _b[classes.clockTextFaded] = mode !== 'hour', _b)), style: {
+            return React.createElement(_Typography2.default, { key: hour, className: classnames(classes.clockText, (_a = {}, _a[classes.clockTextSelected] = mode === 'hour' && selected.hour === index, _a), (_b = {}, _b[classes.clockTextFaded] = mode !== 'hour', _b)), style: {
                     transition: selecting ? 'opacity 600ms ease-in-out' : 'opacity 600ms ease-in-out, color 0ms 600ms',
                     transform: "translate(" + clockRadius * Math.cos(angle) + "px, " + clockRadius * Math.sin(angle) + "px)"
                 } }, hour);
@@ -392,12 +390,12 @@ var Clock = /** @class */function (_super) {
         }), minutes.map(function (minute, index) {
             var angle = index / minutes.length * 2 * Math.PI - Math.PI / 6 * 3;
             if (minute % 5 === 0) {
-                return React.createElement(_Typography2.default, { key: index, className: (0, _classnames2.default)(classes.clockText, (_a = {}, _a[classes.clockTextSelected + " " + classes.textSelected] = mode === 'minute' && selected.minute === index, _a), (_b = {}, _b[classes.clockTextFaded] = mode !== 'minute', _b)), style: {
+                return React.createElement(_Typography2.default, { key: index, className: classnames(classes.clockText, (_a = {}, _a[classes.clockTextSelected + " " + classes.textSelected] = mode === 'minute' && selected.minute === index, _a), (_b = {}, _b[classes.clockTextFaded] = mode !== 'minute', _b)), style: {
                         transition: selecting ? 'opacity 600ms ease-in-out' : 'opacity 600ms ease-in-out, color 0ms 600ms',
                         transform: "translate(" + clockRadius * Math.cos(angle) + "px, " + clockRadius * Math.sin(angle) + "px)"
                     } }, minute);
             } else {
-                return React.createElement("div", { key: index, className: (0, _classnames2.default)(classes.minuteDot, (_c = {}, _c[classes.minuteDotSelected] = mode === 'minute' && selected.minute === minute, _c), (_d = {}, _d[classes.clockTextFaded] = mode !== 'minute', _d)), style: {
+                return React.createElement("div", { key: index, className: classnames(classes.minuteDot, (_c = {}, _c[classes.minuteDotSelected] = mode === 'minute' && selected.minute === minute, _c), (_d = {}, _d[classes.clockTextFaded] = mode !== 'minute', _d)), style: {
                         transition: selecting ? 'opacity 600ms ease-in-out' : 'opacity 600ms ease-in-out, background 0ms 600ms',
                         transform: "translate(" + clockRadius * Math.cos(angle) + "px, " + clockRadius * Math.sin(angle) + "px)"
                     } });

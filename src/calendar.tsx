@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDom from 'react-dom'
 import SwipeableViews from 'react-swipeable-views'
 import {virtualize} from 'react-swipeable-views-utils'
-import classnames from 'classnames'
+const classnames = require('classnames');
 import {withStyles, Theme, StyledComponentProps, StyleRules} from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'

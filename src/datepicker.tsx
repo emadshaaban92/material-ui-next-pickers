@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import classnames from 'classnames'
+const classnames = require('classnames');
 import {withStyles, Theme, StyledComponentProps, StyleRules} from '@material-ui/core/styles'
 import Popover from '@material-ui/core/Popover'
 import Dialog from '@material-ui/core/Dialog'
